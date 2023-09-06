@@ -1,0 +1,25 @@
+<input type="text" placeholder="Name..." id="x1"><br>
+<input type="text" placeholder="Amount..." id="x2"><br>
+<input type="text" placeholder="Discount..." id="x3"><br>
+<button onclick="myfunc()">Enter</button> 
+<p></p>
+<p></p>
+<p></p>
+
+<script>
+    function myfunc(){
+        //console.log("function Called")
+        var name = document.getElementById('x1').value;
+        var amount = document.getElementById('x2').value;
+        var discount = document.getElementById('x3').value;
+
+        document.getElementsByTagName('p')[0].innerHTML = `Name : ${name}`
+
+        var dis = (discount/100) * amount;
+        console.log(dis)
+        document.getElementsByTagName('p')[1].innerHTML = `Discount Value : ${dis}`
+
+        var value = amount - dis;
+        document.getElementsByTagName('p')[2].innerHTML = `Final Amount : ${value}`
+    }
+</script>

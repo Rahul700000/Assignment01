@@ -1,0 +1,40 @@
+<input type="text" id="x1" placeholder="Amount"><br>
+<input type="text" id="x2" placeholder="ROI"><br>
+<input type="text" id="x3" placeholder="Duration(in years)"><br>
+<button onclick="myfunc()">Enter</button>
+
+<p>EMI :</p>
+<p>Interest :</p>
+<p>Total Amount :</p>
+
+<script>
+    function myfunc(){
+        //console.log("Function called")
+        var rec1 = document.getElementById('x1').value;
+        var rec2 = document.getElementById('x2').value;
+        var rec3 = document.getElementById('x3').value;
+
+        console.log(rec1)
+        console.log(rec2)
+        console.log(rec3)
+
+        A = Number(rec1);
+        R = Number(rec2);
+        T = Number(rec3);
+
+        R = R/12/100;
+        T = T * 12;
+
+        var EMI = [A*R*(1+R)**T]/[(1+R)**T-1]
+        //console.log(EMI)
+        document.getElementsByTagName('p')[0].innerHTML = `EMI : ${EMI.toFixed(2)}`
+
+        var Totalpayable = EMI * T;
+        var int = Totalpayable - A;
+        //console.log(int)
+        document.getElementsByTagName('p')[1].innerHTML = `Interest : ${int.toFixed(2)}`
+        document.getElementsByTagName('p')[2].innerHTML = `Total Amount Payable : ${Totalpayable.toFixed(2)}`
+
+
+    }
+</script>

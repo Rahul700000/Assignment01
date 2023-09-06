@@ -1,0 +1,20 @@
+<input type="text" placeholder="Amount" id="x1"><br>
+<input type="text" placeholder="Quantity" id="x2"><br>
+<button onclick="myfunc()">Enter</button>
+<p></p>
+
+<script>
+    function myfunc(){
+        var amount = document.getElementById("x1").value;
+        var quantity = document.getElementById('x2').value;
+
+        var value = amount * quantity;
+        document.getElementsByTagName('p')[0].innerHTML = `Price : ${value}`
+        if(value > 50000){
+            document.getElementsByTagName('p')[0].style.color = 'red'
+        }
+        else{
+            document.getElementsByTagName('p')[0].style.color = 'green'
+        }
+    }
+</script>

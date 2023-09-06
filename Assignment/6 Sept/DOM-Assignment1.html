@@ -1,0 +1,31 @@
+<input type="text" id="x1" placeholder="Amount"><br>
+<input type="text" id="x2" placeholder="ROI"><br>
+<input type="text" id="x3" placeholder="Duration(in years)"><br>
+<button onclick="myfunc()">Enter</button>
+
+<p>Simple Interest</p>
+<p>Final Amount</p>
+
+<script>
+    function myfunc(){
+        //console.log("test");
+        //console.log("document.getElementById('x1')")
+        var rec1 = document.getElementById('x1').value;
+        var rec2 = document.getElementById('x2').value;
+        var rec3 = document.getElementById('x3').value;
+
+        console.log(rec1)
+        console.log(rec2)
+        console.log(rec3)
+
+        P = Number(rec1)
+        R = Number(rec2)
+        N = Number(rec3)
+
+        var SI = (P * N * R)/100;
+        document.getElementsByTagName('p')[0].innerHTML = `Simple Interest : ${SI}`;
+        
+        var FA = P + SI;
+        document.getElementsByTagName('p')[1].innerHTML = `Final Amount : ${FA}`;
+    }
+</script>
